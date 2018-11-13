@@ -1,2 +1,1 @@
-# abbyliu.github.io
-Personal Blog
+# Learning by doing and teaching.
