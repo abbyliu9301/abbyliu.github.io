@@ -20,7 +20,7 @@ gdf <- group_by(df, col1)        | df.group_by('col1')
 summarise(gdf, avg=mean(col1, na.rm=True)) |df.group_by('col1').agg({'col1': 'mean'})
 summarise(gdf, total=sum(col1))            |df.group_by('col1').sum()
 with(df, a+b)                    | df.eval('a+b') or df.a + df.b
-melt(df, id = c('first', 'last'))| pd.melt(df, id_vars = ['first','last']
+melt(df, id = c('first', 'last'))| pd.melt(df, id_vars = ['first','last'])
 
 # Data Reshaping
 ## Pivot 
@@ -44,7 +44,9 @@ stacked.unstack('month')
 
 ## Melt
 Wide formats to long formats.
+```
 df.melt(id_vars = ['first', 'last'], var_name='quantity', value_name='values')
+```
 
 ## Pivot tables
 pivot() provides general pivoting, pivot_table() provides pivoting with aggregation of numeric data.
@@ -54,5 +56,5 @@ df1.pivot_table(index=['a','b'], columns='c', values=['d','e'], margins=True, ag
 ```
 index specifies row labels, columns specifies column labels, 
 values specifies variables we're applying the aggregation function to group by row and column labels. 
-margins=True give column totals and row totals for each group.\
+margins=True give column totals and row totals for each group.
 
